@@ -4,7 +4,18 @@ import {useState} from 'react'
 
 function Exercicio2(){
 
-    const [contador, setContador] = useState(0);
+    const [Vgramas, setVgramas] = useState(0);
+    const [resultado, setResultado] = useState(0);
+
+    function KgEmGramas(){
+
+        let kg = Vgramas * 1000
+
+        setResultado(Number(kg))
+
+        return setResultado
+
+    }
 
     return(
 
@@ -53,13 +64,13 @@ function Exercicio2(){
 
                     <h3>Valor em gramas</h3>
 
-                    <input type="text" placeholder={contador}/>
+                    <input type="text" value={Vgramas} onChange={e => setVgramas(e.target.value)}/>
 
-                    <button>Executar</button>
+                    <button onClick={KgEmGramas}>Executar</button>
 
                 </div>
 
-                <h4>Resultado: O total é R${contador.toFixed(2)}</h4>
+                <h4>Resultado: O total é R${resultado.toFixed(1)}</h4>
 
             </main>
 

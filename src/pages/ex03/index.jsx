@@ -4,7 +4,26 @@ import {useState} from 'react';
 
 function Exercicio3(){
 
-    const [contador, setContador] = useState(0)
+    const [pq, setPq] = useState(0);
+    const [md, setMd] = useState(0);
+    const [gr, setGr] = useState(0);
+    const [resultado, setResultado] = useState(0);
+
+    function quantidades(){
+
+        let p = pq * 13.50
+
+        let m = md * 15.00
+
+        let g = gr * 17.50
+
+        let r = p + m + g
+
+        setResultado(Number(r))
+
+        return setResultado
+
+    }
 
     return(
 
@@ -56,31 +75,31 @@ function Exercicio3(){
                         <div className='tt'>
                             <h3>Quantidade pequeno</h3>
 
-                            <input type="text" placeholder={contador}/>
+                            <input type="text" value={pq} onChange={e => setPq(e.target.value)}/>
 
                         </div>
 
                         <div className='tt'>
                             <h3>Quantidade médio</h3>
 
-                            <input type="text" placeholder={contador}/>
+                            <input type="text" value={md} onChange={e => setMd(e.target.value)}/>
 
                         </div>
 
                         <div className='tt'>
                             <h3>Quantidade grande</h3>
 
-                            <input type="text" placeholder={contador}/>
+                            <input type="text" value={gr} onChange={e => setGr(e.target.value)}/>
 
                         </div>
 
                     </div>
 
-                    <button>Executar</button>
+                    <button onClick={quantidades}>Executar</button>
 
                 </div>
 
-                <h4>Resultado: O total é R${contador.toFixed(2)}</h4>
+                <h4>Resultado: O total é R${resultado.toFixed(2)}</h4>
 
             </main>
 

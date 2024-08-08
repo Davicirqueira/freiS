@@ -6,8 +6,35 @@ function Exercicio1(){
 
     const [valorPedido, setValorPedido] = useState(0);  //variavel de estado.  //onChange=, onClick=, ononMouseMove
     const [valorCupom, setValorCupom] = useState(0)
-    const [resuultado, setResultado] = useState(0)
+    const [resultado, setResultado] = useState(0)
  
+
+    function desconto(){
+
+        let e  = 0
+
+        let r = 0
+
+        if(valorCupom == 0){
+
+            e = valorPedido
+
+            r = e
+
+        }
+
+        else{
+
+            r = valorPedido - valorCupom
+
+        }
+
+        setResultado(Number(r))
+
+        return setResultado
+
+    }
+
 
     return(
 
@@ -56,17 +83,17 @@ function Exercicio1(){
 
                     <h3>Informe o valor do pedido</h3>
 
-                    <input type="text" placeholder={contador}/>
+                    <input type="text" value={valorPedido} onChange={e => setValorPedido(e.target.value)} />
 
                     <h3>Informe o valor do cupom</h3>
 
-                    <input type="text"  placeholder={contador}/>
+                    <input type="text"  value={valorCupom} onChange={e => setValorCupom(e.target.value)}/>
 
-                    <button>Executar</button>
+                    <button onClick={desconto}>Executar</button>
 
                 </div>
 
-                <h4>Resultado: O total é R${setValorPedido.toFixed(2)}</h4>
+                <h4>Resultado: O total é R${resultado.toFixed(2)}</h4>
 
             </main>
 
