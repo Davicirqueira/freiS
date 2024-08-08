@@ -70,7 +70,7 @@ function Exercicio2(){
 
                 </div>
 
-                <h4>Resultado: O total é R${resultado.toFixed(1)}</h4>
+                <h4>Resultado: O total é {resultado}Kg</h4>
 
             </main>
 

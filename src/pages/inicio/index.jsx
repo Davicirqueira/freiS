@@ -74,6 +74,20 @@ function Inicio() {
             
             </a>
 
+            <a className='exs' href="/ex04">
+
+              <div className='card'>
+
+                <img className='cores' src="/assets/images/vermelho.png" alt="" />
+
+                <h3>Valor total por quantidade</h3>
+
+                <p>Exercício 04</p>
+
+              </div>
+            
+            </a>
+
           </div>
 
         </main>
