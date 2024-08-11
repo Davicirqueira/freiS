@@ -52,7 +52,7 @@ function Exercicio2(){
                 </div>
 
                 <br />
-                <hr width="94%" color='#B3FF37'/>
+                <hr width="94%" color='#04F404'/>
 
                 <div className='bloco' width="94px">
 
