@@ -93,7 +93,7 @@ function Inicio() {
 
           <div className='bloquinhos'>
 
-              <a className='exs' href="/ex01">
+              <a className='exs' href="/ex05">
 
                 <div className='card'>
 
@@ -107,7 +107,7 @@ function Inicio() {
 
               </a>
 
-              <a className='exs' href="/ex02">
+              <a className='exs' href="/ex06">
 
                 <div className='card'>
 
@@ -121,7 +121,7 @@ function Inicio() {
 
               </a>
 
-              <a className='exs' href="/ex03">
+              <a className='exs' href="/ex07">
 
                 <div className='card'>
 
@@ -135,7 +135,7 @@ function Inicio() {
 
               </a>
 
-              <a className='exs' href="/ex04">
+              <a className='exs' href="/ex08">
 
                 <div className='card'>
 
@@ -154,13 +154,13 @@ function Inicio() {
 
           <div className='bloquinhos'>
 
-              <a className='exs' href="/ex01">
+              <a className='exs' href="/ex09">
 
                 <div className='card'>
 
                   <img className='cores' src="/assets/images/cinza.png" alt=""/>
                 
-                  <h3>Médias escolares</h3>
+                  <h3>Sorveteria</h3>
 
                   <p>Exercício 09</p>
 
@@ -168,13 +168,13 @@ function Inicio() {
 
               </a>
 
-              <a className='exs' href="/ex02">
+              <a className='exs' href="/ex10">
 
                 <div className='card'>
 
                   <img className='cores' src="/assets/images/rosa.png" alt="" />
 
-                  <h3>Salário líquido</h3>
+                  <h3>Calcule o IMC</h3>
 
                   <p>Exercício 10</p>
 
@@ -182,13 +182,13 @@ function Inicio() {
 
               </a>
 
-              <a className='exs' href="/ex03">
+              <a className='exs' href="/ex11">
 
                 <div className='card'>
 
                   <img className='cores' src="/assets/images/preto.png" alt="" />
 
-                  <h3>Cores primárias</h3>
+                  <h3>Tabuada</h3>
 
                   <p>Exercício 11</p>
 
@@ -196,13 +196,13 @@ function Inicio() {
 
               </a>
 
-              <a className='exs' href="/ex04">
+              <a className='exs' href="/ex12">
 
                 <div className='card'>
 
                   <img className='cores' src="/assets/images/verde_claro.png" alt="" />
 
-                  <h3>Temperaturas corporais</h3>
+                  <h3>Médias</h3>
 
                   <p>Exercício 12</p>
 

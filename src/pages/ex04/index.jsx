@@ -99,7 +99,7 @@ function Exercicio4(){
 
                 <h4>Você lerá {nome} em {resultado.toFixed(2)} horas</h4>
 
-                </main>
+        </main>
 
                 <section>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius repellat est ab iste sint excepturi, quis fuga, quos laboriosam in alias quod, at similique possimus ea nisi omnis soluta laborum.
