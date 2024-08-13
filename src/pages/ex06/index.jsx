@@ -10,13 +10,13 @@ function Exercicio6(){
     const [total, setTotal] = useState(0)
 
     function salarioLiquido() {
-        let sala = (salario * bonus) / 100
+        let sala = (Number(salario) * Number(bonus)) / 100
 
-        let bonu = sala + salario
+        let bonu = Number(sala) + Number(salario)
 
-        let desc = bonu - desconto
+        let desc = Number(bonu) - Number(desconto)
 
-        setTotal(desc)
+        setTotal(Number(desc))
 
         return setTotal
     }
@@ -56,7 +56,7 @@ function Exercicio6(){
             </div>
 
             <br />
-            <hr width="94%" color='#b3a200'/>
+            <hr width="94%" color='#EEAD2D'/>
 
             <div className='bloco' width="94px">
 
@@ -95,7 +95,7 @@ function Exercicio6(){
 
             </div>
 
-            <h4>O salário liquído é R${total}</h4>
+            <h4>O salário liquído é R${total.toFixed(2)}</h4>
 
             </main>
         </div>

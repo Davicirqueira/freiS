@@ -1,6 +1,24 @@
 import './index.scss'
+import { useState } from 'react'
 
 function Exercicio7(){
+
+    const [cor1, setCor1] = useState('');
+    const [cor2, setCor2] = useState('');
+    const [primario, setPrimario] = useState('');
+
+    function corPrimaria(){
+
+        let prim = cor1 == 'amarelo' || cor1 == 'azul' || cor1 == 'vermelho'
+
+        let primm = cor2 == 'amarelo' || cor2 == 'azul' || cor2 == 'vermelho'
+    
+        let r = prim == primm
+
+        setPrimario(r)
+
+        return setPrimario
+    }
 
     return(
 
@@ -25,6 +43,43 @@ function Exercicio7(){
                 </div>
 
             </header>
+
+            <main>
+
+                <div className='titulo-ex07'>
+
+                    <a href="/"><img className='seta' src="/assets/images/setinha_freiS.png" alt="" /></a>
+
+                   <h2>Exercício 07 - Cores primárias</h2>
+
+                </div>
+
+                <br />
+                <hr width="94%" color='blue'/>
+
+                <div className='bloco' width="94px">
+
+                    <p>Implementar um programa em Javascript para calcular o valor final de uma compra a partir do valor da compra e do cupom de desconto. O cupom diz quantos reais terá de desconto.</p>
+                
+                </div>
+
+                <div className='card'>
+
+                    <h3>Cor 1</h3>
+
+                    <input type="text" value={cor1} onChange={e => setCor1(e.target.value)} />
+
+                    <h3>Cor 2</h3>
+
+                    <input type="text"  value={cor2} onChange={e => setCor2(e.target.value)}/>
+
+                    <button onClick={corPrimaria}>Executar</button>
+
+                </div>
+
+                <h4>Resultado:{primario}</h4>
+
+            </main>
 
 
         </div>
