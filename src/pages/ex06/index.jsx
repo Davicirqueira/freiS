@@ -4,6 +4,23 @@ import { useState } from 'react'
 
 function Exercicio6(){
 
+    const [salario, setSalario] = useState(0)
+    const [bonus, setBonus] = useState(0)
+    const [desconto, setDesconto] = useState(0)
+    const [total, setTotal] = useState(0)
+
+    function salarioLiquido() {
+        let sala = (salario * bonus) / 100
+
+        let bonu = sala + salario
+
+        let desc = bonu - desconto
+
+        setTotal(desc)
+
+        return setTotal
+    }
+
     return(
 
         <div className='pagina-ex06'>
@@ -30,16 +47,16 @@ function Exercicio6(){
 
             <main>
 
-            <div className='titulo-ex05'>
+            <div className='titulo-ex06'>
 
                 <a href="/"><img className='seta' src="/assets/images/setinha_freiS.png" alt="" /></a>
 
-                <h2>Exercício 05 - Médias escolares</h2>
+                <h2>Exercício 06 - Salário Liquído</h2>
 
             </div>
 
             <br />
-            <hr width="94%" color='#0D33B3'/>
+            <hr width="94%" color='#b3a200'/>
 
             <div className='bloco' width="94px">
 
@@ -52,35 +69,33 @@ function Exercicio6(){
                 <div className='qtds'>
 
                     <div className='tt'>
-                        <h3>1° Nota</h3>
+                        <h3>Salário</h3>
 
-                        <input type="text" value={nota1} onChange={e => setNota1(e.target.value)}/>
-
-                    </div>
-
-                    <div className='tt'>
-                        <h3>2° Nota</h3>
-
-                        <input type="text" value={nota2} onChange={e => setNota2(e.target.value)}/>
+                        <input type="text" value={salario} onChange={e => setSalario(e.target.value)}/>
 
                     </div>
 
                     <div className='tt'>
-                        <h3>3° Nota</h3>
+                        <h3>Bônus</h3>
 
-                        <input type="text" value={nota3} onChange={e => setNota3(e.target.value)}/>
+                        <input type="text" value={bonus} onChange={e => setBonus(e.target.value)}/>
+
+                    </div>
+
+                    <div className='tt'>
+                        <h3>Desconto</h3>
+
+                        <input type="text" value={desconto} onChange={e => setDesconto(e.target.value)}/>
 
                     </div>
 
                 </div>
 
-                <button onClick={media}>Executar</button>
-                <button onClick={situacao}>Situação</button>
+                <button onClick={salarioLiquido}>Executar</button>
 
             </div>
 
-            <h4>A sua média do aluno é {med.toFixed(1)}</h4>
-            <h4>O aluno passou? {sit}</h4>
+            <h4>O salário liquído é R${total}</h4>
 
             </main>
         </div>
