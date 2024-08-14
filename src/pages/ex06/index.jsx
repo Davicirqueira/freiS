@@ -4,6 +4,23 @@ import { useState } from 'react'
 
 function Exercicio6(){
 
+    const [salario, setSalario] = useState(0)
+    const [bonus, setBonus] = useState(0)
+    const [desconto, setDesconto] = useState(0)
+    const [total, setTotal] = useState(0)
+
+    function salarioLiquido() {
+        let sala = (Number(salario) * Number(bonus)) / 100
+
+        let bonu = Number(sala) + Number(salario)
+
+        let desc = Number(bonu) - Number(desconto)
+
+        setTotal(Number(desc))
+
+        return setTotal
+    }
+
     return(
 
         <div className='pagina-ex06'>
@@ -30,59 +47,59 @@ function Exercicio6(){
 
             <main>
 
-            <div className='titulo-ex05'>
+                <div className='titulo-ex06'>
 
-                <a href="/"><img className='seta' src="/assets/images/setinha_freiS.png" alt="" /></a>
+                    <a href="/"><img className='seta' src="/assets/images/setinha_freiS.png" alt="" /></a>
 
-                <h2>Exercício 05 - Médias escolares</h2>
-
-            </div>
-
-            <br />
-            <hr width="94%" color='#0D33B3'/>
-
-            <div className='bloco' width="94px">
-
-                <p>Implementar um programa em Javascript para verificar se um aluno passou ou não, baseado em 3 notas, considerando que a média miníma para passar é 6.</p>
-
-            </div>
-
-            <div className='card'>
-
-                <div className='qtds'>
-
-                    <div className='tt'>
-                        <h3>1° Nota</h3>
-
-                        <input type="text" value={nota1} onChange={e => setNota1(e.target.value)}/>
-
-                    </div>
-
-                    <div className='tt'>
-                        <h3>2° Nota</h3>
-
-                        <input type="text" value={nota2} onChange={e => setNota2(e.target.value)}/>
-
-                    </div>
-
-                    <div className='tt'>
-                        <h3>3° Nota</h3>
-
-                        <input type="text" value={nota3} onChange={e => setNota3(e.target.value)}/>
-
-                    </div>
+                    <h2>Exercício 06 - Salário liquido</h2>
 
                 </div>
 
-                <button onClick={media}>Executar</button>
-                <button onClick={situacao}>Situação</button>
+                <br />
+                <hr width="94%" color='yellow'/>
 
-            </div>
+                <div className='bloco' width="94px">
 
-            <h4>A sua média do aluno é {med.toFixed(1)}</h4>
-            <h4>O aluno passou? {sit}</h4>
+                    <p>Implementar um programa em Javascript para calcular o salario liquido de um funcionário, a partir de seu salário base, do bônus mensal em porecentagem e total de descontos em reais.</p>
+
+                </div>
+
+                <div className='card'>
+
+                    <div className='qtds'>
+
+                        <div className='tt'>
+                            <h3>Salário</h3>
+
+                            <input placeholder="0" value={salario} onChange={e => setSalario(e.target.value)}/>
+
+                        </div>
+
+                        <div className='tt'>
+                            <h3>Bônus</h3>
+
+                            <input placeholder="0" value={bonus} onChange={e => setBonus(e.target.value)}/>
+
+                        </div>
+
+                        <div className='tt'>
+                            <h3>Desconto</h3>
+
+                            <input placeholder="0" value={desconto} onChange={e => setDesconto(e.target.value)}/>
+
+                        </div>
+
+                    </div>
+
+                    <button onClick={salarioLiquido}>Executar</button>
+                    
+
+                </div>
+
+                <h4>O salário liquído é R${total.toFixed(2)}</h4>
 
             </main>
+
         </div>
 
     )

@@ -60,7 +60,7 @@ function Exercicio10(){
                 </div>
 
                 <h4>O seu IMC é: </h4>
-                <h4>Sua classificação é</h4>
+                
 
 
             </main>

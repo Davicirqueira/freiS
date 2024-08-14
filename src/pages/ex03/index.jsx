@@ -103,17 +103,7 @@ function Exercicio3(){
 
             </main>
 
-            <section>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia error nesciunt doloribus quisquam sint dolore aliquam deleniti dignissimos repellendus. Quo laudantium at illo repudiandae nam eligendi reprehenderit incidunt vitae tempore!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam placeat sunt aliquam totam tenetur quos ea expedita cumque impedit. Sed consequuntur minima cupiditate impedit veritatis quae autem expedita? Mollitia, rem.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores odit, culpa fugiat aperiam voluptate quod ad aliquam quidem, exercitationem in animi omnis soluta. Laboriosam placeat sunt quis. Deleniti, fuga alias!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, autem enim? Dolorem sed nisi id! Adipisci voluptas, unde accusamus officia ipsa sunt placeat doloremque perspiciatis cum facere! Reprehenderit, dolorum hic?  
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque deleniti animi itaque beatae ad autem libero quasi, necessitatibus quidem exercitationem unde eos esse saepe explicabo cupiditate mollitia ab est amet!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non molestiae hic possimus recusandae, in itaque natus. Eum eveniet nobis vel repudiandae aut corrupti, nam consequatur aliquid veniam optio maxime quibusdam!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, neque consequuntur! Porro doloremque eos voluptatibus voluptate recusandae adipisci omnis quod nisi quae. Totam earum, facere qui quo possimus animi exercitationem.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius vel vero molestias rerum ea eum deleniti culpa cum aperiam commodi, voluptatem vitae porro ipsa necessitatibus excepturi veniam explicabo debitis totam?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sit, magnam ipsam vel, optio fuga eaque voluptatum error quasi esse maxime nemo et eum consequatur facilis beatae amet quod veniam.
-            </section>
+
 
         </div>
 
