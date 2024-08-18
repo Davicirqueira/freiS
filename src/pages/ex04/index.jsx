@@ -8,7 +8,7 @@ function Exercicio4(){
     const [paginas, setPaginas] = useState(0);
     const [segundosPg, setSegundosPg] = useState(0);
     const [resultado, setResultado] = useState(0);
-
+    
     function horasLivro(){
 
         let t = segundosPg * 60
@@ -20,6 +20,16 @@ function Exercicio4(){
         setResultado(time)
 
         return setResultado
+
+    }
+
+    function tA(e){
+
+        if(e.key == 'Enter'){
+
+            horasLivro();
+            
+        }
 
     }
 
@@ -80,20 +90,21 @@ function Exercicio4(){
                         <div className='tt'>
                             <h3>Total de páginas</h3>
 
-                            <input type="text" value={paginas} onChange={e => setPaginas(e.target.value)}/>
+                            <input placeholder='0' value={paginas} onChange={e => setPaginas(e.target.value)}/>
 
                         </div>
 
                         <div className='tt'>
                             <h3>Tempo em segundos</h3>
 
-                            <input type="text" value={segundosPg} onChange={e => setSegundosPg(e.target.value)}/>
+                            <input placeholder='0' onKeyUp={tA} value={segundosPg} onChange={e => setSegundosPg(e.target.value)}/>
 
                         </div>
 
                     </div>
 
                     <button onClick={horasLivro}>Executar</button>
+
 
                 </div>
 

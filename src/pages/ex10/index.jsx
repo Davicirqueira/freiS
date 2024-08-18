@@ -1,6 +1,123 @@
 import './index.scss'
 
+import { useState } from 'react'
+
 function Exercicio10(){
+
+    const [altura, setAltura] = useState(0)
+    const [peso, setPeso] = useState(0)
+    const [listaImc, setListaImc] = useState([])
+    const [imc, setImc] = useState('')
+    const [edit, setEdit] = useState(-1)
+
+    function addImc(){
+
+        let i = peso / (altura * altura)
+
+        /*setExib(i)*/
+
+        let s = ''
+
+        if(i >= 40){
+
+            s = `Peso: ${peso} | Altura: ${altura} | Situação: Obesidade Grau |||`
+        
+        }
+        
+        else if(i >= 35 && i <= 39.9){
+        
+            s = `Peso: ${peso} | Altura: ${altura} | Situação: Obesidade Grau ||`
+        
+        }
+        
+        else if(i >= 30 && i <= 34.9){
+        
+            s = `Peso: ${peso} | Altura: ${altura} | Situação: Obesidade Grau |`
+        
+        }
+        
+        else if(i >= 25 && i <= 29.9){
+        
+            s = `Peso: ${peso} | Altura: ${altura} | Situação: Sobrepeso`
+        
+        }
+        
+        else if(i >= 18.5 && i <= 24.9){
+        
+            s = `Peso: ${peso} | Altura: ${altura} | Situação: Peso Normal`
+        
+        }
+        
+        else if(i < 18.5){
+        
+            s = `Peso: ${peso} | Altura: ${altura} | Situação: Abaixo do Peso`
+        
+        }
+
+        
+
+        if(peso != 0 && altura != 0){
+
+            if(edit == -1){
+             
+                setListaImc([...listaImc, s])
+
+                setImc(s)
+
+                setAltura(0)
+                setPeso(0)
+
+            }
+
+            else{
+
+                listaImc[edit] = altura
+                listaImc[edit] = peso
+
+                setListaImc([...listaImc])
+                setAltura(0)
+                setPeso(0)
+
+                setEdit(-1)
+
+            }
+        }
+
+        return setImc
+        
+
+        //setListaImc[i] = `Peso: ${peso} | Altura: ${altura} | Situação: ${s}`
+            
+        //setSit(i)
+
+    }
+
+    function remove(pos){
+
+        listaImc.splice(pos, 1)
+
+        setListaImc([...listaImc])
+
+    }
+
+    function editing(pos){
+
+        setAltura(listaImc[pos])
+        setPeso(listaImc[pos])
+
+        setEdit(pos)
+
+    }
+
+    function tA(e){
+
+        if(e.key == 'Enter'){
+
+            addImc();
+
+        }
+
+    }
 
     return(
 
@@ -45,22 +162,50 @@ function Exercicio10(){
 
                 </div>
 
-                <div className='card'>
+                <div className='lado'>
 
-                    <h3>Altura</h3>
+                    <div className='card'>
 
-                    <input type="text"/>
+                        <div className='l'>
 
-                    <h3>Peso</h3>
+                            <div className='c'>
+                            <h3>Altura</h3>
+                            <input placeholder="0.0" value={altura} onChange={e => setAltura(e.target.value)}/>
+                            </div>
 
-                    <input type="text" />
+                            <div className='c'>
+                            <h3>Peso</h3>
+                            <input placeholder="0.0" onKeyUp={tA} value={peso} onChange={e => setPeso(e.target.value)}/>                            
+                            </div>             
 
-                    <button>Executar</button>
+
+                        </div>
+
+                        <div className='l'>
+                        <button onClick={addImc}>Executar</button>
+                        </div>
+                        
+
+                    </div>
+                    
+                    {/*<h4>Seu IMC é: {exib.toFixed(2)}</h4>*/}
+
+                    <ul>
+
+                        {listaImc.map(i => 
+                        
+                            <li>
+                                {i}
+                                <img className='edit' onClick={editing} src="/assets/images/edit.png" alt="" />
+                                <button onClick={remove}><img src="/assets/images/image.png" alt="" /></button>
+                            </li>
+
+                        )}
+                        
+                            
+                    </ul>
 
                 </div>
-
-                <h4>O seu IMC é: </h4>
-                
 
 
             </main>

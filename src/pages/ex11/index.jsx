@@ -70,7 +70,7 @@ function Exercicio11(){
 
                     <h3>Tabuada do:</h3>
 
-                    <input type="text" value={numero} onChange={e => setNumero(e.target.value)}/>
+                    <input placeholder='0' value={numero} onChange={e => setNumero(e.target.value)}/>
 
                     <button onClick={tabuada}>Executar</button>
 
