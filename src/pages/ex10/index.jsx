@@ -192,9 +192,9 @@ function Exercicio10(){
 
                     <ul>
 
-                        {listaImc.map(i => 
+                        {listaImc.map((i, pos) => 
                         
-                            <li>
+                            <li key={pos}>
                                 <li className='linha-b'>
                                 {i}
                                 <img className='edit' onClick={editing} src="/assets/images/edit.png" alt="" />
