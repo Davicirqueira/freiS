@@ -131,26 +131,35 @@
 
             li{
                 
-                margin: 20px;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                padding: 0px 20px;
-                text-align: center;
-                align-items: center;
-                width: 620px;
-                height: 54px;
-                background-color: #fff;
-                border-radius: 12px;
-                font: 600 18px 'Roboto';
+
+                .linha-b{
+
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 0px 20px;
+                    text-align: center;
+                    align-items: center;
+                    width: 620px;
+                    height: 54px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    font: 600 18px 'Roboto';
+
+                }
+
+                .edit{
+
+                    width: 30px;
+                    margin-left: 50px;
+                }
+    
     
             }
 
-            .edit{
-
-                width: 30px;
-                margin-left: 50px;
-            }
 
             button{
 
@@ -160,6 +169,7 @@
                 border-radius: 12px;
                 border-style: none;
                 align-items: right;
+                margin-top: 20px;
 
                 img{
 

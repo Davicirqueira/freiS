@@ -202,7 +202,7 @@ function Inicio() {
 
                   <img className='cores' src="/assets/images/verde_claro.png" alt="" />
 
-                  <h3>Médias</h3>
+                  <h3>Comparador de pessoas</h3>
 
                   <p>Exercício 12</p>
 
