@@ -9,7 +9,7 @@ function Exercicio12(){
     const [maisVelhaNome, setMaisVelhaNome] = useState('');
     const [maisVelhaIdade, setMaisVelhaIdade] = useState(0);
     const [mulherJovemNome, setMulherJovemNome] = useState('');
-    const [mulherJovemIdade, setMulherJvemIdade] = useState(Infinity);
+    const [mulherJovemIdade, setMulherJovemIdade] = useState(Infinity);
     const [soma, setSoma] = useState(0);
     const [homemMais30, setHomemMais30] = useState(0);
     const [mulheresMenos18, setMulheresMenos18] = useState(0);
@@ -25,10 +25,10 @@ function Exercicio12(){
             let sexos = sexo
         
             if (idades > maisVelhaIdade) {
-                maisVelhaNome=nomes
-                maisVelhaIdade=idades
+                setMaisVelhaNome(nomes)
+                maisVelhaIdade = idades
             }
-            if (sexos==='F' && idades < mulherJovemIdade) {
+            if (sexos ==='F' && idades < mulherJovemIdade) {
                 mulherJovemNome=nomes
                 mulherJovemIdade=idades
             }
