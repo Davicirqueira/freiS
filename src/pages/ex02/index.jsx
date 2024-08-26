@@ -1,6 +1,7 @@
 import './index.scss'
 
 import {useState} from 'react'
+import Cabecalho from '../../components/Cabecalho'
 
 function Exercicio2(){
 
@@ -21,25 +22,7 @@ function Exercicio2(){
 
         <div className='pagina-ex02'>
 
-            <header>
-
-                <div className='esq'>
-
-                    <img className='logo' src="/assets/images/logo_freiS.png" alt="" />
-
-                    <h2 className='R'>React FreiS</h2>
-
-                </div>
-
-                <div className='dir'>
-
-                    <a href="/ex01">Inicio</a>
-
-                    <a href="/sobre">Sobre</a>
-
-                </div>
-
-            </header>
+            <Cabecalho/>
 
             <main>
 
