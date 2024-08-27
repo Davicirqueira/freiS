@@ -27,21 +27,24 @@ function Exercicio12(){
         
             if (idades > maisVelhaIdade) {
                 setMaisVelhaNome(nomes)
-                maisVelhaIdade = idades
+                setMaisVelhaIdade(idades)
+        
             }
             if (sexos ==='F' && idades < mulherJovemIdade) {
-                mulherJovemNome=nomes
-                mulherJovemIdade=idades
+                setMulherJovemNome(nomes)
+                setMulherJovemIdade(idades)
             }
-            soma += idades
+
+            setSoma(soma += idades)
         
             if (sexos === 'M' && idades > 30) {
-                homemMais30++
+                setHomemMais30(homemMais30++)
             }
             if (sexos === 'F' && idades < 18) {
-                mulheresMenos18++
+                setMulheresMenos18(mulheresMenos18++)
             }
-            total++
+
+            setTotal(total++)
             
         }
         

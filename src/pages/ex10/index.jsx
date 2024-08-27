@@ -180,7 +180,7 @@ function Exercicio10(){
                             <li key={pos}>
                                 <li className='linha-b'>
                                 {i}
-                                <img className='edit' onClick={editing} src="/assets/images/edit.png" alt="" />
+                                <img className='edit' onClick={() => editing(pos)} src="/assets/images/edit.png" alt="" />
                                 </li>
                                 <li className='bot'>
                                 <button onClick={remove}><img src="/assets/images/image.png" alt="" /></button>
