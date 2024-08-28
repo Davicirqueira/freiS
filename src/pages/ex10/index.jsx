@@ -103,8 +103,13 @@ function Exercicio10(){
 
     function editing(pos){
 
-        setAltura(listaImc[pos])
-        setPeso(listaImc[pos])
+        const item = listaImc[pos].split('|')
+        const alturaItem = parseFloat(item[1].split(':')[1].trim())
+        const pesoItem = parseFloat(item[0].split(':')[1].trim())
+
+
+        setPeso(pesoItem)
+        setAltura(alturaItem)
 
         setEdit(pos)
 
@@ -183,7 +188,7 @@ function Exercicio10(){
                                 <img className='edit' onClick={() => editing(pos)} src="/assets/images/edit.png" alt="" />
                                 </li>
                                 <li className='bot'>
-                                <button onClick={remove}><img src="/assets/images/image.png" alt="" /></button>
+                                <button onClick={() => remove(pos)}><img src="/assets/images/image.png" alt="" /></button>
                                 </li>
                             </li>
 
