@@ -6,7 +6,8 @@ function Exercicio12(){
 
     const [nome, setNome] = useState('');
     const [idade, setIdade] = useState(0);
-    const [sexo, setSexo] = useState('');
+    const [sexoM, setSexoM] = useState(false);
+    const [sexoF, setSexoF] = useState(false);
     const [maisVelhaNome, setMaisVelhaNome] = useState('');
     const [maisVelhaIdade, setMaisVelhaIdade] = useState(0);
     const [mulherJovemNome, setMulherJovemNome] = useState('');
@@ -19,28 +20,34 @@ function Exercicio12(){
 
     function Identificacao() {
         let c = 1
+        let t = 0
+        
 
         while (c == 1) {
             let nomes = nome
             let idades = idade
-            let sexos = sexo
+            let sexoMasc = sexoM
+            let sexoFemi = sexoF
+            let s = 0
         
             if (idades > maisVelhaIdade) {
                 setMaisVelhaNome(nomes)
                 setMaisVelhaIdade(idades)
         
             }
-            if (sexos ==='F' && idades < mulherJovemIdade) {
+            if (sexoFemi === true && idades < mulherJovemIdade) {
                 setMulherJovemNome(nomes)
                 setMulherJovemIdade(idades)
             }
 
-            setSoma(soma += idades)
+            s = Number(soma) + Number(idades)
+
+            setSoma(s)
         
-            if (sexos === 'M' && idades > 30) {
+            if (sexoMasc === true && idades > 30) {
                 setHomemMais30(homemMais30++)
             }
-            if (sexos === 'F' && idades < 18) {
+            if (sexoFemi === true && idades < 18) {
                 setMulheresMenos18(mulheresMenos18++)
             }
 
@@ -48,7 +55,9 @@ function Exercicio12(){
             
         }
         
-        setMediaIdade(soma/total)
+        t = soma / total
+
+        setMediaIdade(t)
 
     }
 
@@ -92,11 +101,11 @@ function Exercicio12(){
                     <div className='group'>
 
                         <div className='r'>
-                            <input type="radio" name='g' checked={sexo} onChange={e => setSexo(e.target.checked)} /> Masculino
+                            <input type="radio" checked={sexoM} onChange={e => setSexoM(e.target.checked)} /> Masculino
                         </div>
                          
                         <div>
-                            <input type="radio" name='g' checked={sexo} onChange={e => setSexo(e.target.checked)} /> Feminino
+                            <input type="radio" checked={sexoF} onChange={e => setSexoF(e.target.checked)} /> Feminino
                         </div>
 
                     </div>
