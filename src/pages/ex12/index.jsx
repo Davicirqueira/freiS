@@ -11,17 +11,18 @@ function Exercicio12(){
     const [maisVelhaNome, setMaisVelhaNome] = useState('');
     const [maisVelhaIdade, setMaisVelhaIdade] = useState(0);
     const [mulherJovemNome, setMulherJovemNome] = useState('');
-    const [mulherJovemIdade, setMulherJovemIdade] = useState(Infinity);
+    const [mulherJovemIdade, setMulherJovemIdade] = useState();
     const [soma, setSoma] = useState(0);
     const [homemMais30, setHomemMais30] = useState(0);
-    const [mulheresMenos18, setMulheresMenos18] = useState(0);
     const [mediaIdade, setMediaIdade] = useState(0)
-    const [total, setTotal] = useState(0);
+    const [mulherMenos, setMulherMenos] = useState('')
 
     function Identificacao() {
+        let total = 0
         let c = 1
         let t = 0
-        
+        let mulheresMenos18 = ''
+
 
         while (c == 1) {
             let nomes = nome
@@ -35,7 +36,7 @@ function Exercicio12(){
                 setMaisVelhaIdade(idades)
         
             }
-            if (sexoFemi === true && idades < mulherJovemIdade) {
+            if (sexoFemi == true && idades < mulherJovemIdade) {
                 setMulherJovemNome(nomes)
                 setMulherJovemIdade(idades)
             }
@@ -44,14 +45,15 @@ function Exercicio12(){
 
             setSoma(s)
         
-            if (sexoMasc === true && idades > 30) {
+            if (sexoMasc == true && idades > 30) {
                 setHomemMais30(homemMais30++)
             }
-            if (sexoFemi === true && idades < 18) {
-                setMulheresMenos18(mulheresMenos18++)
+            if (sexoFemi == true && idades < 18) {
+                mulheresMenos18 = nome
             }
+            setMulherMenos(mulheresMenos18)
 
-            setTotal(total++)
+            total++
             
         }
         
@@ -120,7 +122,7 @@ function Exercicio12(){
                     <h4>Mulher mais jovem: {mulherJovemNome} </h4>
                     <h4>Média de idade: {mediaIdade} </h4>
                     <h4>Homens com mais de 30: {homemMais30} </h4>
-                    <h4>Mulheres com menos de 18: {mulheresMenos18} </h4>
+                    <h4>Mulheres com menos de 18: {mulherMenos} </h4>
 
                 </div>
 
