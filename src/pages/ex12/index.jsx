@@ -13,7 +13,7 @@ function Exercicio12(){
     const [mulherJovemNome, setMulherJovemNome] = useState('');
     const [mulherJovemIdade, setMulherJovemIdade] = useState();
     const [soma, setSoma] = useState(0);
-    const [homemMais30, setHomemMais30] = useState(0);
+    const [homems30, setHomem30] = useState(0);
     const [mediaIdade, setMediaIdade] = useState(0)
     const [mulherMenos, setMulherMenos] = useState('')
 
@@ -21,36 +21,44 @@ function Exercicio12(){
         let total = 0
         let c = 1
         let t = 0
+        let homemMais30 = 0
+        let maisVelha = maisVelhaIdade
         let mulheresMenos18 = ''
 
 
-        while (c == 1) {
+        while (c === 1) {
             let nomes = nome
             let idades = idade
             let sexoMasc = sexoM
             let sexoFemi = sexoF
             let s = 0
         
-            if (idades > maisVelhaIdade) {
+            if (idades > maisVelha) {
                 setMaisVelhaNome(nomes)
                 setMaisVelhaIdade(idades)
         
             }
-            if (sexoFemi == true && idades < mulherJovemIdade) {
+            if (sexoFemi === true && idades < mulherJovemIdade) {
                 setMulherJovemNome(nomes)
                 setMulherJovemIdade(idades)
+
             }
 
             s = Number(soma) + Number(idades)
 
             setSoma(s)
         
-            if (sexoMasc == true && idades > 30) {
-                setHomemMais30(homemMais30++)
+            if (sexoMasc === true && idades > 30) {
+
+                homemMais30++ 
+                
             }
-            if (sexoFemi == true && idades < 18) {
+            if (sexoFemi === true && idades < 18) {
                 mulheresMenos18 = nome
             }
+
+            setHomem30(homemMais30)
+
             setMulherMenos(mulheresMenos18)
 
             total++
@@ -103,11 +111,11 @@ function Exercicio12(){
                     <div className='group'>
 
                         <div className='r'>
-                            <input type="radio" checked={sexoM} onChange={e => setSexoM(e.target.checked)} /> Masculino
+                            <input type="checkbox" checked={sexoM} onChange={e => setSexoM(e.target.checked)} /> Masculino
                         </div>
                          
                         <div>
-                            <input type="radio" checked={sexoF} onChange={e => setSexoF(e.target.checked)} /> Feminino
+                            <input type="checkbox" checked={sexoF} onChange={e => setSexoF(e.target.checked)} /> Feminino
                         </div>
 
                     </div>
@@ -121,7 +129,7 @@ function Exercicio12(){
                     <h4>Pessoa mais velha: {maisVelhaNome}</h4>
                     <h4>Mulher mais jovem: {mulherJovemNome} </h4>
                     <h4>Média de idade: {mediaIdade} </h4>
-                    <h4>Homens com mais de 30: {homemMais30} </h4>
+                    <h4>Homens com mais de 30: {homems30} </h4>
                     <h4>Mulheres com menos de 18: {mulherMenos} </h4>
 
                 </div>
