@@ -1,145 +1,188 @@
-import { useState } from 'react'
-import './index.scss'
-import Cabecalho from '../../components/Cabecalho'
+import './index.scss';
+import { useState } from 'react';
+import Cabecalho from '../../components/Cabecalho';
+import { Link } from 'react-router-dom';
 
-function Exercicio12(){
-
+export default function ComparadorPessoas() {
     const [nome, setNome] = useState('');
-    const [idade, setIdade] = useState(0);
-    const [sexoM, setSexoM] = useState(false);
-    const [sexoF, setSexoF] = useState(false);
-    const [maisVelhaNome, setMaisVelhaNome] = useState('');
-    const [maisVelhaIdade, setMaisVelhaIdade] = useState(0);
-    const [mulherJovemNome, setMulherJovemNome] = useState('');
-    const [mulherJovemIdade, setMulherJovemIdade] = useState();
-    const [soma, setSoma] = useState(0);
-    const [homems30, setHomem30] = useState(0);
-    const [mediaIdade, setMediaIdade] = useState(0)
-    const [mulherMenos, setMulherMenos] = useState('')
+    const [idade, setIdade] = useState('');
+    const [sexo, setSexo] = useState('');
+    const [listaPessoas, setListaPessoas] = useState([]);
+    const [editIndex, setEditIndex] = useState(-1);
 
-    function Identificacao() {
-        let total = 0
-        let c = 1
-        let t = 0
-        let homemMais30 = 0
-        let maisVelha = maisVelhaIdade
-        let mulheresMenos18 = ''
+    const [estatisticas, setEstatisticas] = useState({
+        maisVelho: "",
+        mulherMaisJovem: "",
+        mediaIdade: 0,
+        homensMaisDe30: 0,
+        mulheresMenosDe18: 0
+    });
 
+    function addPessoa() {
+        if (nome !== '' && idade !== '' && sexo !== '') {
+            const novaPessoa = { nome, idade: Number(idade), sexo };
 
-        while (c === 1) {
-            let nomes = nome
-            let idades = idade
-            let sexoMasc = sexoM
-            let sexoFemi = sexoF
-            let s = 0
-        
-            if (idades > maisVelha) {
-                setMaisVelhaNome(nomes)
-                setMaisVelhaIdade(idades)
-        
-            }
-            if (sexoFemi === true && idades < mulherJovemIdade) {
-                setMulherJovemNome(nomes)
-                setMulherJovemIdade(idades)
+            let novaListaPessoas;
+            if (editIndex === -1) {
+                novaListaPessoas = [...listaPessoas, novaPessoa];
+            } else {
+                novaListaPessoas = listaPessoas.map((pessoa, item) => {
+                    if (item === editIndex) {
+                        return novaPessoa;
+                    } else {
+                        return pessoa;
+                    }
+                });
 
+                setEditIndex(-1);
             }
 
-            s = Number(soma) + Number(idades)
+            setListaPessoas(novaListaPessoas);
 
-            setSoma(s)
-        
-            if (sexoMasc === true && idades > 30) {
 
-                homemMais30++ 
-                
+            let maior = -Infinity;
+            let menor = Infinity;
+            let nm = "";
+            let nmn = "";
+            let outro = 0;
+            let outro1 = 0;
+            let soma = 0;
+
+            for (let i = 0; i < novaListaPessoas.length; i++) {
+                const pessoa = novaListaPessoas[i];
+                soma += pessoa.idade;
+
+                if (pessoa.idade > maior) {
+                    maior = pessoa.idade;
+                    nm = pessoa.nome;
+                }
+
+                if (pessoa.sexo === 'Feminino' && pessoa.idade < menor) {
+                    menor = pessoa.idade;
+                    nmn = pessoa.nome;
+                }
+
+                if (pessoa.sexo === 'Masculino' && pessoa.idade > 30) {
+                    outro++;
+                }
+
+                if (pessoa.sexo === 'Feminino' && pessoa.idade < 18) {
+                    outro1++;
+                }
             }
-            if (sexoFemi === true && idades < 18) {
-                mulheresMenos18 = nome
-            }
 
-            setHomem30(homemMais30)
+            let media = soma / novaListaPessoas.length;
 
-            setMulherMenos(mulheresMenos18)
+            setEstatisticas({
+                maisVelho: nm,
+                mulherMaisJovem: nmn,
+                mediaIdade: media.toFixed(2),
+                homensMaisDe30: outro,
+                mulheresMenosDe18: outro1
+            });
 
-            total++
-            
+            setNome('');
+            setIdade('');
+            setSexo('');
         }
-        
-        t = soma / total
-
-        setMediaIdade(t)
-
     }
 
-    return(
+    function remove(pos) {
+        const updatedList = [...listaPessoas];
+        updatedList.splice(pos, 1);
+        setListaPessoas(updatedList);
+    }
 
-        <div className='pagina-ex12'>
+    function alterarDados(pos) {
+        const pessoa = listaPessoas[pos];
+        setNome(pessoa.nome);
+        setIdade(pessoa.idade);
+        setSexo(pessoa.sexo);
+        setEditIndex(pos);
+    }
 
-            <Cabecalho/>
+    return (
+        <div className='pagina-ex12 pagina'>
+            <Cabecalho />
 
-            <main>
+            <section className='titulo1'>
+                <Link to='/'>
+                    <img src="/assets/images/setinha_freiS.png" alt="" />
+                </Link>
+                <h1>Exercício 12 - Comparador de Pessoas</h1>
 
-                <div className='titulo-ex12'>
+            </section>
 
-                    <a href="/"><img className='seta' src="/assets/images/setinha_freiS.png" alt="" /></a>
+            <br />
+            <hr width="90%" color='#4ea93b'/>
 
-                    <h2>Exercício 12 - Comparador de pessoas</h2>
+            <section className='quadro'>
+                <p>Implemente um programa em Javascript que leia o nome, a idade, e o sexo de várias pessoas e calcule as estatísticas.</p>
+            </section>
 
-                </div>
+            <section className='ex'>
+                <div className='lado' >
+                    <div className='card'>
+                        <div className='l'>
+                            <div className='c'>
+                                <h2>Nome</h2>
+                                <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+                            </div>
+                            <div className='c'>
+                                <h2>Idade</h2>
+                                <input type="text" value={idade} onChange={e => setIdade(e.target.value)} />
+                            </div>
+                            <div className='sexo'>
+                                <h2>Sexo</h2>
+                                <div className='se'>
+                                    <div>
+                                        <input type='radio' name='gpo' value="Masculino" onChange={e => setSexo(e.target.value)} checked={sexo === 'Masculino'} /> Masculino
+                                    </div>
+                                    <div>
+                                        <input type='radio' name='gpo' value="Feminino" onChange={e => setSexo(e.target.value)} checked={sexo === 'Feminino'} /> Feminino
+                                    </div>
+                                </div>
+                            </div>
 
-                <br />
-                <hr width="94%" color='#4EA93B'/>
-
-                <div className='bloco' width="94px">
-
-                    <p>Implemente um programa em Javascript que leia o nome, a idade, e o sexo de várias pessoas.</p>
-
-                </div>
-
-                <div className='card'>
-
-                    <h3>Nome</h3>
-
-                    <input placeholder="Nome" value={nome} onChange={e => setNome(e.target.value)} />
-
-                    <h3>Idade</h3>
-
-                    <input placeholder="Idade" value={idade} onChange={e => setIdade(e.target.value)} />
-
-                    <h3>Sexo</h3>
-                    
-                    <div className='group'>
-
-                        <div className='r'>
-                            <input type="checkbox" checked={sexoM} onChange={e => setSexoM(e.target.checked)} /> Masculino
                         </div>
-                         
-                        <div>
-                            <input type="checkbox" checked={sexoF} onChange={e => setSexoF(e.target.checked)} /> Feminino
+                        <div className='bu'>
+                            <button onClick={addPessoa}>Executar</button>
                         </div>
-
                     </div>
 
-                    <button onClick={Identificacao}>Executar</button>
+                    <section className='estatisticas'>
 
+                        <p>Pessoa mais velha: {estatisticas.maisVelho}</p>
+                        <p>Mulher mais jovem: {estatisticas.mulherMaisJovem}</p>
+                        <p>Média de idade: {estatisticas.mediaIdade}</p>
+                        <p>Homens com mais de 30: {estatisticas.homensMaisDe30}</p>
+                        <p>Mulheres com menos de 18: {estatisticas.mulheresMenosDe18}</p>
+                    </section>
                 </div>
+                <div className='lista'>
+                    <div className='hr'>
+                        <h2>Pessoas</h2>
+                        <hr color='#6533B7'/>
+                    </div>
 
-                <div className='w'>
+                    {listaPessoas.map((item, pos) => (
+                        <div className='plano' key={pos}>
+                            <div className=' tit'>
+                                <h1>{item.nome}</h1>
+                                <h2>{item.idade} anos</h2>
+                            </div>
 
-                    <h4>Pessoa mais velha: {maisVelhaNome}</h4>
-                    <h4>Mulher mais jovem: {mulherJovemNome} </h4>
-                    <h4>Média de idade: {mediaIdade} </h4>
-                    <h4>Homens com mais de 30: {homems30} </h4>
-                    <h4>Mulheres com menos de 18: {mulherMenos} </h4>
+                            <p>{item.sexo}</p>
 
+                            <div className='titulo'>
+                                <button className='a ' onClick={() => alterarDados(pos)}>Editar</button>
+                                <button className='b' onClick={() => remove(pos)}>Apagar</button>
+                            </div>
+
+                        </div>
+                    ))}
                 </div>
-
-            </main>
-
+            </section>
         </div>
-
-    )
-
+    );
 }
-
-export default Exercicio12
