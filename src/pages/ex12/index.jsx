@@ -16,6 +16,7 @@ export default function ComparadorPessoas() {
         mediaIdade: 0,
         homensMaisDe30: 0,
         mulheresMenosDe18: 0
+        
     });
 
     function addPessoa() {
