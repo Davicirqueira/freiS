@@ -1,7 +1,10 @@
 import './index.scss';
 
+import Card from '../../components/Card';
+
 function Inicio() {
-  
+
+
   return (
 
     <div className="pagina-inicio">
@@ -34,58 +37,26 @@ function Inicio() {
 
               <a className='exs' href="/ex01">
               
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/laranja.png" alt=""/>
-                
-                  <h3>Cupom de desconto</h3>
-
-                  <p>Exercício 01</p>
-
-                </div>
+                <Card cor={'#ebb268'} titulo={'Cupom de desconto'} subtitulo={'Exercício 01'}/>
 
               </a>
             
               <a className='exs' href="/ex02">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/verde.png" alt="" />
-
-                  <h3>Converter Kg/gramas</h3>
-
-                  <p>Exercício 02</p>
-
-                </div>
+                <Card cor={'#04F404'} titulo={'Converter Kg/gramas'} subtitulo={'Exercício 02'}/>
 
               </a>
 
               <a className='exs' href="/ex03">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/azul.png" alt="" />
-
-                  <h3>Valor total por quantidade</h3>
-
-                  <p>Exercício 03</p>
-
-                </div>
+                <Card cor={'#0e1e41'} titulo={'Valor total por quantidade'} subtitulo={'Exercício 03'}/>
               
               </a>
 
               <a className='exs' href="/ex04">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/vermelho.png" alt="" />
-
-                  <h3>Tempo de leitura</h3>
-
-                  <p>Exercício 04</p>
-
-                </div>
-              
+                <Card cor={'#a20202'} titulo={'Tempo de leitura'} subtitulo={'Exercício 04'}/>
+            
               </a>
 
           </div>
@@ -95,57 +66,25 @@ function Inicio() {
 
               <a className='exs' href="/ex05">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/azul_normal.png" alt=""/>
-                
-                  <h3>Médias escolares</h3>
-
-                  <p>Exercício 05</p>
-
-                </div>
+                <Card cor={'#0D33B3'} titulo={'Médias escolares'} subtitulo={'Exercício 05'}/>
 
               </a>
 
               <a className='exs' href="/ex06">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/amarelo.png" alt="" />
-
-                  <h3>Salário líquido</h3>
-
-                  <p>Exercício 06</p>
-
-                </div>
+                <Card cor={'yellow'} titulo={'Salário liquído'} subtitulo={'Exercício 06'}/>
 
               </a>
 
               <a className='exs' href="/ex07">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/roxo.png" alt="" />
-
-                  <h3>Cores primárias</h3>
-
-                  <p>Exercício 07</p>
-
-                </div>
+                <Card cor={'#4B0081'} titulo={'Cores primárias'} subtitulo={'Exercício 07'}/>
 
               </a>
 
               <a className='exs' href="/ex08">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/marrom.png" alt="" />
-
-                  <h3>Temperatura</h3>
-
-                  <p>Exercício 08</p>
-
-                </div>
+               <Card cor={'#8D4925'} titulo={'Temperatura'} subtitulo={'Exercício 08'}/>
 
               </a>
 
@@ -156,57 +95,25 @@ function Inicio() {
 
               <a className='exs' href="/ex09">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/cinza.png" alt=""/>
-                
-                  <h3>Sorveteria</h3>
-
-                  <p>Exercício 09</p>
-
-                </div>
+                <Card cor={'#808080'} titulo={'Sorveteria'} subtitulo={'Exercício 09'}/>
 
               </a>
 
               <a className='exs' href="/ex10">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/rosa.png" alt="" />
-
-                  <h3>Calcule o IMC</h3>
-
-                  <p>Exercício 10</p>
-
-                </div>
+                <Card cor={'#E44F9C'} titulo={'Calcule o IMC'} subtitulo={'Exercício 10'}/>
 
               </a>
 
               <a className='exs' href="/ex11">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/preto.png" alt="" />
-
-                  <h3>Tabuada</h3>
-
-                  <p>Exercício 11</p>
-
-                </div>
+                <Card cor={'#000'} titulo={'Tabuada'} subtitulo={'Exercício 11'}/>
 
               </a>
 
               <a className='exs' href="/ex12">
 
-                <div className='card'>
-
-                  <img className='cores' src="/assets/images/verde_claro.png" alt="" />
-
-                  <h3>Comparador de pessoas</h3>
-
-                  <p>Exercício 12</p>
-
-                </div>
+                <Card cor={'#4ea93b'} titulo={'Comparador de pessoas'} subtitulo={'Exercício 12'}/>
 
               </a>
 

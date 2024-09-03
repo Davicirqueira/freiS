@@ -54,7 +54,7 @@ function Exercicio1(){
                 </div>
 
                 <br />
-                <hr width="94%" color='#FFCE37'/>
+                <hr width="94%" color='#ebb268'/>
 
                 <div className='bloco' width="94px">
 

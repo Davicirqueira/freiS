@@ -1,13 +1,17 @@
 import './index.scss'
 
 //Passar um props para cada item do card.
-function Card({cor_card, titulo, subtitulo}) {
+export default function Card({cor, titulo, subtitulo}) {
 
     return (
 
-        <div className='card'>
+        <div className='comp-card'>
 
+            <div className='cores' style={{backgroundColor: cor}}></div>
 
+            <h3>{titulo}</h3>
+
+            <p>{subtitulo}</p>
 
         </div>
 
