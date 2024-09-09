@@ -45,7 +45,7 @@ function Exercicio2(){
 
                 <div className='card'>
 
-                    <h3>Valor em gramas</h3>
+                    <h3>Valor em kilos</h3>
 
                     <input type="text" value={Vgramas} onChange={e => setVgramas(e.target.value)}/>
 
@@ -53,7 +53,7 @@ function Exercicio2(){
 
                 </div>
 
-                <h4>Resultado: O total é {resultado}Kg</h4>
+                <h4>Resultado: O total é {resultado} gramas</h4>
 
             </main>
 
