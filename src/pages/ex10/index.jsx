@@ -8,14 +8,18 @@ function Exercicio10(){
     const [altura, setAltura] = useState(0)
     const [peso, setPeso] = useState(0)
     const [listaImc, setListaImc] = useState([])
-    const [imc, setImc] = useState('')
     const [edit, setEdit] = useState(-1)
 
     function addImc(){
 
         let i = peso / (altura * altura)
 
-        /*setExib(i)*/
+        if(altura == '' || peso == ''){
+
+            alert('Preencha todos os campos.')
+            return;
+            
+        }
 
         let s = ''
 
@@ -55,41 +59,32 @@ function Exercicio10(){
         
         }
 
+        let sit = {
+
+            situacao: s,
+            alturaNumber: altura,
+            pesoNumber: peso
+
+        };
+
         
+        if(edit === -1){
+         
+            setListaImc([...listaImc, sit])
 
-        if(peso != 0 && altura != 0){
-
-            if(edit == -1){
-             
-                setListaImc([...listaImc, s])
-
-                setImc(s)
-
-                setAltura(0)
-                setPeso(0)
-
-            }
-
-            else{
-
-                listaImc[edit] = altura
-                listaImc[edit] = peso
-
-                setListaImc([...listaImc])
-                setAltura(0)
-                setPeso(0)
-
-                setEdit(-1)
-
-            }
         }
 
-        return setImc
-        
+        else{
 
-        //setListaImc[i] = `Peso: ${peso} | Altura: ${altura} | Situação: ${s}`
-            
-        //setSit(i)
+            const updateList = [...listaImc];
+            updateList[edit] = sit;
+            setListaImc(updateList);
+            setEdit(-1)
+
+        }
+
+        setAltura(0);
+        setPeso(0);
 
     }
 
@@ -101,17 +96,14 @@ function Exercicio10(){
 
     }
 
-    function editing(pos){
+    function editing(pos, i){
 
-        const item = listaImc[pos].split('|')
-        const alturaItem = parseFloat(item[1].split(':')[1].trim())
-        const pesoItem = parseFloat(item[0].split(':')[1].trim())
+        const alturaItem = Number(i.alturaNumber);
+        const pesoItem =   Number(i.pesoNumber);
 
-
-        setPeso(pesoItem)
-        setAltura(alturaItem)
-
-        setEdit(pos)
+        setAltura(alturaItem);
+        setPeso(pesoItem);
+        setEdit(pos);
 
     }
 
@@ -176,7 +168,7 @@ function Exercicio10(){
 
                     </div>
                     
-                    {/*<h4>Seu IMC é: {exib.toFixed(2)}</h4>*/}
+
 
                     <ul>
 
@@ -184,8 +176,8 @@ function Exercicio10(){
                         
                             <li key={pos}>
                                 <li className='linha-b'>
-                                {i}
-                                <img className='edit' onClick={() => editing(pos)} src="/assets/images/edit.png" alt="" />
+                                {i.situacao}
+                                <img className='edit' onClick={() => editing(pos, i)} src="/assets/images/edit.png" alt="" />
                                 </li>
                                 <li className='bot'>
                                 <button onClick={() => remove(pos)}><img src="/assets/images/image.png" alt="" /></button>
